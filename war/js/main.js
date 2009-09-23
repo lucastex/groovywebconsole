@@ -6,8 +6,8 @@ $(document).ready(function() {
         $("#dialog").dialog({
 			bgiframe: true,
 			autoOpen: false,
-			height: 330,
-			width: 330,
+			height: 500,
+			width: 475,
 			modal: true,
 			buttons: {
 				Submit: function() {
@@ -15,6 +15,8 @@ $(document).ready(function() {
                     $("#author").val($("#dialogAuthor").val());
                     $("#tags").val($("#dialogTags").val());
                     $("#script").val(editor.getCode());
+					$("#recaptchaChallengeField").val($("#recaptcha_challenge_field").val());
+					$("#recaptchaResponseField").val($("#recaptcha_response_field").val());
                     $("#publishform").submit();
 				}
 			}
@@ -27,6 +29,12 @@ $(document).ready(function() {
         if (code.replace(/^\s+|\s+$/g, '').length > 0) {
             $('#dialog').dialog('open');
             event.preventDefault();
+			
+			Recaptcha.create("6LfvzgcAAAAAAEdYwARtbSk8kr2aoSYRSFuFE6P6",
+				"recaptcha", {
+				theme: "clean"
+			});
+				
         } else {
             alert("Please enter a script before publishing.");
             event.preventDefault();
