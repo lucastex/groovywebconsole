@@ -92,4 +92,9 @@ $(document).ready(function() {
 	    .ajaxStop(function() {
 	        $(this).hide();
 	    });
+	                                  	                                       
+	$("#recaptcha-response").hide();
+	$("#recaptcha-response").fadeIn(3000, function () {
+	     $("#recaptcha-response").fadeOut(3000);
+	});
 });

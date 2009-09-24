@@ -133,7 +133,14 @@ pre {
 #button-bar {
 	padding: 5px;
 	margin-bottom: 20px;
-}
+}          
+
+#recaptcha-response {
+	padding-top: 5px;   
+	padding-left: 30px;    
+	color: gray; 
+	font-family: sans-serif;
+}          
 
 #loadingDiv {
 	position: fixed;

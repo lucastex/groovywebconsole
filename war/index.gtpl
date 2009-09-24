@@ -23,7 +23,11 @@
         <form id="publishform" action="publish.groovy" method="POST">
             <div id="textarea-container" class="border">
                 <textarea id="script" name="script" cols="140" rows="40"><% include "/loadscript.groovy" %></textarea>
-            </div>
+            </div>             
+            
+			<div id="recaptcha-response">      
+			   <%= request.getAttribute('errorMessage') ?: "" %>
+			</div>                
         
             <div id="button-bar">
                 <input id="title" name="title" type="hidden" value="">
